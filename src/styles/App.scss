@@ -1,0 +1,38 @@
+@forward './_reset.scss';
+@use 'fonts' as f;
+@use 'colors' as c;
+@use 'breakpoints' as b;
+
+.App {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 3rem;
+    margin: 3rem auto;
+    font-family: f.$font;
+    max-width: 1200px;
+
+    @include b.breakpoint(large) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+.sidebar, .aside {
+    padding: 3rem;
+}
+
+.sidebar {
+    background-color: c.$primary-color
+}
+    
+.aside {
+    background-color: c.$background-color;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+ 
+
+
+
