@@ -2,6 +2,7 @@
 @use 'fonts' as f;
 @use 'colors' as c;
 @use 'breakpoints' as b;
+@use 'functions' as func;
 
 .App {
     display: grid;
@@ -10,9 +11,9 @@
     gap: 3rem;
     margin: 3rem auto;
     font-family: f.$font;
-    max-width: 1200px;
+    width: min(100% - 3rem,  func.rem(1000));
 
-    @include b.breakpoint(large) {
+    @include b.breakpoint(desktop) {
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto;
     }

@@ -1,7 +1,11 @@
+@use 'functions' as func;
+
 $breakpoints-up: (
-    'medium': 43.75em,
-    'large': 90em
+    'mobile': func.em(700),
+    'desktop': func.em(1440)
 );
+
+//700px mobile , 1440 for desktop
 
 @mixin breakpoint($size){
     @media (min-width: map-get($breakpoints-up, $size)) {
